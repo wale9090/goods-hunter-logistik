@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Goods-Hunter Logistic | Transport- & Logistikdienstleistungen deutschlandweit</title>
+  <meta name="description" content="Goods-Hunter Logistic: zuverlässige Transport- und Logistikdienstleistungen deutschlandweit. Direktfahrten, Teil-/Komplettladungen, Stückgut/Paletten, Regelverkehre. Jetzt Transport anfragen." />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.10);
+      --accent:#22c55e;
+      --accent2:#60a5fa;
+      --max:1120px;
+      --pad:20px;
+      --r:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.14), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: linear-gradient(to bottom, rgba(11,15,25,.92), rgba(11,15,25,.62));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,197,94,.95));
+      box-shadow: var(--shadow);
+    }
+    .navlinks{
+      display:flex; gap:14px; align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      padding:8px 10px; border-radius:12px;
+      color:var(--muted);
+    }
+    .navlinks a:hover{ color:var(--text); background:rgba(255,255,255,.06); }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+    .btn:hover{ background:rgba(255,255,255,.07); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(96,165,250,.85));
+      border-color: rgba(255,255,255,.14);
+      color:#071018;
+    }
+    .btn.primary:hover{ filter: brightness(1.04); }
+    .btn.small{ padding:9px 12px; border-radius:12px; font-weight:700; }
+
+    /* Hero */
+    header{ padding:44px 0 18px; }
+    .hero{
+      display:grid; gap:18px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.55);
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:14px;
+    }
+    .pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+    h1{
+      margin:12px 0 8px;
+      font-size: clamp(30px, 4.6vw, 52px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width: 64ch;
+      font-size: 16px;
+    }
+    .heroActions{
+      margin-top:16px;
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .trustRow{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:10px;
+    }
+    @media (max-width: 560px){
+      .trustRow{ grid-template-columns: 1fr; }
+    }
+    .trust{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:12px;
+    }
+    .trust b{ display:block; font-size:13px; }
+    .trust span{ display:block; color:var(--muted); font-size:13px; margin-top:2px; }
+
+    /* Sections */
+    section{ padding: 30px 0; }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(20px, 2.6vw, 28px);
+      letter-spacing:-.2px;
+    }
+    .hint{ margin:0; color:var(--muted); max-width:72ch; }
+
+    .grid{
+      display:grid; gap:12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: 920px){ .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.45);
+      border-radius: var(--r);
+      padding:16px;
+    }
+    .card h3{ margin:0 0 6px; font-size:16px; letter-spacing:-.1px; }
+    .card p{ margin:0; color:var(--muted); font-size:14px; }
+
+    .steps{
+      display:grid; gap:12px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    @media (max-width: 920px){ .steps{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px){ .steps{ grid-template-columns: 1fr; } }
+
+    .step{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius: var(--r);
+      padding:16px;
+    }
+    .num{
+      width:34px; height:34px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      background:rgba(96,165,250,.18);
+      border:1px solid rgba(96,165,250,.26);
+      color: #cfe6ff;
+      margin-bottom:10px;
+    }
+    .step b{ display:block; }
+    .step span{ display:block; color:var(--muted); margin-top:4px; font-size:14px; }
+
+    /* Form */
+    .formWrap{
+      display:grid; gap:12px;
+      grid-template-columns: 1.05fr .95fr;
+      align-items:start;
+    }
+    @media (max-width: 920px){ .formWrap{ grid-template-columns: 1fr; } }
+
+    form{
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.50);
+      border-radius: calc(var(--r) + 6px);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .fields{
+      display:grid; gap:10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 560px){ .fields{ grid-template-columns: 1fr; } }
+
+    label{ display:block; font-size:13px; color:var(--muted); margin:8px 0 6px; }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(11,15,25,.60);
+      color:var(--text);
+      font: inherit;
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{ color:rgba(229,231,235,.45); }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .checks{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:10px;
+    }
+    .chip{
+      display:flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    .chip input{ width:auto; margin:0; }
+
+    .sideCard{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius: calc(var(--r) + 6px);
+      padding:16px;
+    }
+    .sideCard b{ display:block; margin-bottom:6px; }
+    .sideCard p{ margin:0; color:var(--muted); font-size:14px; }
+    .contactList{
+      margin-top:12px;
+      display:grid; gap:10px;
+    }
+    .contactItem{
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.40);
+      border-radius:16px;
+      padding:12px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .contactItem small{ color:var(--muted); display:block; }
+    .contactItem span{ font-weight:800; }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      padding:20px 0 40px;
+      margin-top:26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footerRow{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Floating WhatsApp button (mobile friendly) */
+    .floatBar{
+      position:fixed;
+      right:14px;
+      bottom:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:60;
+    }
+    .fab{
+      border-radius:999px;
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(17,24,39,.72);
+      backdrop-filter: blur(10px);
+      display:flex; align-items:center; gap:10px;
+      font-weight:900;
+    }
+    .fab:hover{ filter: brightness(1.03); }
+    .fab .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.16);
+    }
+
+    /* Utility */
+    .split{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+    }
+    .muted{ color:var(--muted); }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 14px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div style="line-height:1.1;">Goods-Hunter Logistic</div>
+            <div class="muted" style="font-size:12px; font-weight:800; letter-spacing:.3px;">TRANSPORT • LOGISTIK • DEUTSCHLANDWEIT</div>
+          </div>
+        </div>
+
+        <div class="navlinks">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#reichweite">Reichweite</a>
+          <a href="#fuhrpark">Fuhrpark</a>
+          <a href="#kontakt" class="btn small primary">Transport anfragen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="hero">
+        <div class="heroCard">
+          <div class="kicker">
+            <span class="pill">Deutschlandweit</span>
+            <span>Termintreu • Transparent • Flexibel</span>
+          </div>
+
+          <h1>Transport- & Logistikdienstleistungen, auf die Sie sich verlassen können.</h1>
+          <p class="sub">
+            Goods-Hunter Logistic organisiert Transporte deutschlandweit – von zeitkritischen Direktfahrten bis zu planbaren
+            Teil- und Komplettladungen. Schnell anfragen, zügig ein Angebot erhalten.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary" href="#kontakt">Jetzt anfragen</a>
+            <a class="btn" href="tel:+4915145534968">Anrufen: 0151 45534968</a>
+            <a class="btn" href="https://wa.me/4915145534968?text=Hallo%20Goods-Hunter%20Logistic%2C%20ich%20m%C3%B6chte%20einen%20Transport%20anfragen." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+
+          <div class="trustRow" aria-label="Vorteile">
+            <div class="trust">
+              <b>Schnelle Reaktionszeit</b>
+              <span>Anfrage rein – Rückmeldung zügig.</span>
+            </div>
+            <div class="trust">
+              <b>Saubere Abwicklung</b>
+              <span>Klare Daten, klare Kommunikation.</span>
+            </div>
+            <div class="trust">
+              <b>Deutschlandweite Transporte</b>
+              <span>Flexible Planung für Ihre Route.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard">
+          <b style="font-size:16px;">Schnellanfrage</b>
+          <p class="muted" style="margin:6px 0 0;">
+            3 Angaben reichen für den Start: Abholung, Zustellung, Sendung. Den Rest klären wir im Gespräch.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="split">
+            <a class="btn primary" href="#kontakt">Zum Anfrageformular</a>
+            <a class="btn" href="tel:+4915145534968">Direkt anrufen</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="muted" style="font-size:13px;">
+            Tipp: Für schnellere Angebote bitte Maße (L×B×H), Gewicht, Packstücke/Paletten und Termin nennen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="leistungen">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2>Leistungen</h2>
+          <p class="hint">Schlank, zuverlässig, deutschlandweit – passend für zeitkritische und planbare Transporte.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Direkt- & Sonderfahrten (Express)</h3>
+            <p>Direkte Zustellung ohne Umladen – ideal für zeitkritische Sendungen.</p>
+          </div>
+          <div class="card">
+            <h3>Teil- & Komplettladungen (LTL/FTL)</h3>
+            <p>Wirtschaftliche Teilladung oder komplette Tour – planbar und effizient.</p>
+          </div>
+          <div class="card">
+            <h3>Stückgut / Paletten</h3>
+            <p>Palettierte Ware und Packstücke – sauber dokumentiert und sicher transportiert.</p>
+          </div>
+          <div class="card">
+            <h3>Regelverkehre</h3>
+            <p>Wiederkehrende Touren für Industrie, Handel und Handwerk.</p>
+          </div>
+          <div class="card">
+            <h3>Termin- & Zeitfensterzustellung</h3>
+            <p>Auf Wunsch mit Avisierung und fixen Zeitfenstern (nach Absprache).</p>
+          </div>
+          <div class="card">
+            <h3>Zusatzleistungen</h3>
+            <p>z. B. Hebebühne/Hubwagen je nach Einsatz – bitte in der Anfrage angeben.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2>Ablauf</h2>
+          <p class="hint">So kommen Sie schnell von der Anfrage zur Zustellung.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <b>Anfrage senden</b>
+            <span>Abholung, Zustellung, Termin, Maße/Gewicht.</span>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <b>Angebot erhalten</b>
+            <span>Transparent und passend zu Ihrer Sendung.</span>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <b>Abholung & Transport</b>
+            <span>Koordiniert, zuverlässig, klare Status-Updates.</span>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <b>Zustellung</b>
+            <span>Termintreu – mit Bestätigung nach Absprache.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reichweite">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2>Reichweite</h2>
+          <p class="hint">Deutschlandweite Abholung und Zustellung – flexibel nach Route und Termin.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Deutschlandweit</h3>
+            <p>Transporte innerhalb Deutschlands – von Einzeltransport bis regelmäßiger Verkehr.</p>
+          </div>
+          <div class="card">
+            <h3>Zeitkritische Sendungen</h3>
+            <p>Für Express / Sonderfahrten bitte Deadline und Zeitfenster angeben.</p>
+          </div>
+          <div class="card">
+            <h3>Planbare Transporte</h3>
+            <p>Ideal für Teil-/Komplettladungen und wiederkehrende Touren.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fuhrpark">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2>Fuhrpark</h2>
+          <p class="hint">Auf Wunsch können hier (später) Fahrzeugklassen und Ausstattung ergänzt werden.</p>
+        </div>
+
+        <div class="card">
+          <h3>Ohne Angaben (derzeit)</h3>
+          <p>
+            Wir setzen je nach Sendung und Route das passende Fahrzeug ein. Für eine optimale Disposition
+            bitte Sendungsdaten (Maße/Gewicht/Packstücke) in der Anfrage angeben.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2>Kontakt & Transportanfrage</h2>
+          <p class="hint">Senden Sie uns die Daten — wir melden uns schnellstmöglich mit Rückfragen oder Angebot.</p>
+        </div>
+
+        <div class="formWrap">
+          <form id="quoteForm">
+            <div class="fields">
+              <div>
+                <label for="name">Name / Firma *</label>
+                <input id="name" name="name" placeholder="Max Mustermann / Firma" required />
+              </div>
+              <div>
+                <label for="phone">Telefon *</label>
+                <input id="phone" name="phone" placeholder="+49 ..." required />
+              </div>
+              <div>
+                <label for="email">E-Mail *</label>
+                <input id="email" name="email" type="email" placeholder="info@..." required />
+              </div>
+              <div>
+                <label for="service">Leistung *</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Bitte auswählen</option>
+                  <option>Direkt- & Sonderfahrt (Express)</option>
+                  <option>Teilladung (LTL)</option>
+                  <option>Komplettladung (FTL)</option>
+                  <option>Stückgut / Paletten</option>
+                  <option>Regelverkehr</option>
+                  <option>Sonstiges</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="pickup">Abholung (PLZ/Ort) *</label>
+                <input id="pickup" name="pickup" placeholder="z. B. 10115 Berlin" required />
+              </div>
+              <div>
+                <label for="delivery">Zustellung (PLZ/Ort) *</label>
+                <input id="delivery" name="delivery" placeholder="z. B. 20095 Hamburg" required />
+              </div>
+
+              <div>
+                <label for="pickupDate">Abholdatum / Zeitfenster</label>
+                <input id="pickupDate" name="pickupDate" placeholder="z. B. 22.01.2026 08–12 Uhr" />
+              </div>
+              <div>
+                <label for="deliveryDate">Zustelldatum / Zeitfenster</label>
+                <input id="deliveryDate" name="deliveryDate" placeholder="z. B. 23.01.2026 10–16 Uhr" />
+              </div>
+
+              <div>
+                <label for="cargo">Sendung (Packstücke/Paletten) *</label>
+                <input id="cargo" name="cargo" placeholder="z. B. 2 Paletten" required />
+              </div>
+              <div>
+                <label for="weight">Gewicht (gesamt)</label>
+                <input id="weight" name="weight" placeholder="z. B. 450 kg" />
+              </div>
+
+              <div>
+                <label for="dims">Maße (L×B×H)</label>
+                <input id="dims" name="dims" placeholder="z. B. 120×80×160 cm" />
+              </div>
+              <div>
+                <label for="value">Warenwert (optional)</label>
+                <input id="value" name="value" placeholder="z. B. 2.000 €" />
+              </div>
+            </div>
+
+            <div class="checks" aria-label="Zusatzoptionen">
+              <label class="chip"><input type="checkbox" name="extras" value="Avisierung" /> Avisierung</label>
+              <label class="chip"><input type="checkbox" name="extras" value="Zeitfenster" /> Zeitfenster</label>
+              <label class="chip"><input type="checkbox" name="extras" value="Hebebuehne" /> Hebebühne</label>
+              <label class="chip"><input type="checkbox" name="extras" value="Hubwagen" /> Hubwagen</label>
+            </div>
+
+            <label for="notes">Besonderheiten / Nachricht</label>
+            <textarea id="notes" name="notes" placeholder="z. B. Abholung Rampe, Anlieferung nur bis 14 Uhr, empfindliche Ware ..."></textarea>
+
+            <div class="split" style="margin-top:12px;">
+              <button class="btn primary" type="submit">Anfrage per WhatsApp senden</button>
+              <a class="btn" href="tel:+4915145534968">Oder anrufen</a>
+            </div>
+
+            <p class="muted" style="margin:10px 0 0; font-size:12px;">
+              Hinweis: Dieses Formular sendet die Anfrage aktuell per WhatsApp (öffnet WhatsApp mit vorgefülltem Text).
+              Optional kann ich dir auch E-Mail-Versand (Formspree/Netlify) einbauen.
+            </p>
+          </form>
+
+          <aside class="sideCard">
+            <b>Direktkontakt</b>
+            <p>Für schnelle Absprachen erreichen Sie uns am besten telefonisch oder per WhatsApp.</p>
+
+            <div class="contactList">
+              <div class="contactItem">
+                <div>
+                  <small>Telefon</small>
+                  <span>0151 45534968</span>
+                </div>
+                <a class="btn small" href="tel:+4915145534968">Anrufen</a>
+              </div>
+
+              <div class="contactItem">
+                <div>
+                  <small>WhatsApp</small>
+                  <span>Chat starten</span>
+                </div>
+                <a class="btn small primary" href="https://wa.me/4915145534968?text=Hallo%20Goods-Hunter%20Logistic%2C%20ich%20m%C3%B6chte%20einen%20Transport%20anfragen." target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+
+              <div class="contactItem">
+                <div>
+                  <small>E-Mail (Platzhalter)</small>
+                  <span>info@goods-hunter-logistic.de</span>
+                </div>
+                <a class="btn small" href="mailto:info@goods-hunter-logistic.de?subject=Transportanfrage%20-%20Goods-Hunter%20Logistic">E-Mail</a>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <p class="muted" style="font-size:13px;">
+              Wenn du mir deine echte E-Mail gibst und ggf. 2–3 Fuhrpark-Details, passe ich die Seite in 30 Sekunden an.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footerRow">
+          <div>© <span id="y"></span> Goods-Hunter Logistic</div>
+          <div class="muted">Transport • Logistik • Deutschlandweit</div>
+        </div>
+        <div class="muted" style="margin-top:10px;">
+          Impressum/Datenschutz: Platzhalter – bitte rechtlich korrekt ergänzen.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="floatBar" aria-label="Schnellzugriff">
+    <a class="fab" href="tel:+4915145534968" title="Anrufen">
+      <span class="dot" aria-hidden="true"></span>
+      Anrufen
+    </a>
+    <a class="fab" href="https://wa.me/4915145534968?text=Hallo%20Goods-Hunter%20Logistic%2C%20ich%20m%C3%B6chte%20einen%20Transport%20anfragen." target="_blank" rel="noopener" title="WhatsApp">
+      <span class="dot" aria-hidden="true"></span>
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Build WhatsApp message from form
+    const form = document.getElementById("quoteForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const extras = data.getAll("extras");
+      const lines = [
+        "Hallo Goods-Hunter Logistic, ich möchte einen Transport anfragen:",
+        "",
+        `Name/Firma: ${data.get("name") || "-"}`,
+        `Telefon: ${data.get("phone") || "-"}`,
+        `E-Mail: ${data.get("email") || "-"}`,
+        `Leistung: ${data.get("service") || "-"}`,
+        "",
+        `Abholung: ${data.get("pickup") || "-"}`,
+        `Zustellung: ${data.get("delivery") || "-"}`,
+        `Abholdatum/Zeitfenster: ${data.get("pickupDate") || "-"}`,
+        `Zustelldatum/Zeitfenster: ${data.get("deliveryDate") || "-"}`,
+        "",
+        `Sendung: ${data.get("cargo") || "-"}`,
+        `Gewicht: ${data.get("weight") || "-"}`,
+        `Maße: ${data.get("dims") || "-"}`,
+        `Warenwert: ${data.get("value") || "-"}`,
+        `Extras: ${extras.length ? extras.join(", ") : "-"}`,
+        "",
+        `Nachricht: ${data.get("notes") || "-"}`
+      ];
+
+      const msg = encodeURIComponent(lines.join("\n"));
+      const url = `https://wa.me/4915145534968?text=${msg}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
